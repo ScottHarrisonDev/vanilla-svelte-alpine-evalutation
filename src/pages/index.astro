@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Vailla vs Alpine vs Svelte">
+	<main>
+		<h1><span class="text-gradient">Vanilla</span> vs <span class="text-gradient">Alpine</span> vs <span class="text-gradient">Svelte</span></h1>
+		<p class="instructions">
+			Comparing how to solve common problems across Vanilla JS, Alpine and Svelte
+		</p>
+		<ul role="list" class="link-card-grid">
+			<li class="link-card">
+				<a href="/scoped-js">
+					<h2>
+						Scoped JS
+						<span>&rarr;</span>
+					</h2>
+					<p>
+						How do you ensure the JS is scoped to each instance of a component?
+					</p>
+				</a>
+			</li>
+			<li class="link-card">
+				<a href="/">
+					<h2>
+						Passing Data
+						<span>&rarr;</span>
+					</h2>
+					<p>
+						How easy is passing data to a component?
+					</p>
+				</a>
+			</li>
+		</ul>
+	</main>
+</Layout>

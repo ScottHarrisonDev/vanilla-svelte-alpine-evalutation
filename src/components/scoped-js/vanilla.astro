@@ -1,0 +1,31 @@
+---
+---
+
+<scoped-js-component class="scoped-js-component">
+    Clicking the button below should only toggle the checkbox in this specific instance of the <code>&ltVanilla&gt</code> component.
+    <div class="scoped-js-component__interactive-area">
+        <button type="button" class="button">Click Here</button>
+        <input type="checkbox" value="vanilla" />
+    </div>
+</scoped-js-component>
+
+<script>
+    class ScopedJsComponent extends HTMLElement {
+
+        constructor() {
+            super()
+
+            const button = this.querySelector('.scoped-js-component__interactive-area button') as HTMLButtonElement
+            const checkbox = this.querySelector('.scoped-js-component__interactive-area input') as HTMLInputElement
+
+            button.addEventListener('click', () => {
+                this.handleClick(checkbox)
+            })
+        }
+
+        handleClick(checkbox: HTMLInputElement) {
+            checkbox.checked = !checkbox.checked
+        }
+    }
+    customElements.define('scoped-js-component', ScopedJsComponent)
+</script>

@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Vanilla from '../components/scoped-js/vanilla.astro';
+import Alpine from '../components/scoped-js/alpine.astro';
+import Svelte from '../components/scoped-js/svelte.svelte';
+---
+
+<Layout title="Scoped JS">
+	<main>
+        <a href="/" class="button">Back</a>
+		<h1><span class="text-gradient">Scoped JS</span></h1>
+		<p class="instructions">
+            When there are multiple instances of a component on a single page you need to be able to run JS which is scoped to each instance specifically. Below are some examples of how this is done across the different approaches.
+            <br />
+            <br />
+            Alpine and Svelte handle this internally by default, with Vanilla JS we can use basic web components and custom elements.
+		</p>
+		<div>
+            <h2>Vanilla</h2>
+            <div class="component-block">
+                <Vanilla />
+                <Vanilla />
+                <Vanilla />
+            </div>
+        </div>
+		<div>
+            <h2>Alpine</h2>
+            <div class="component-block">
+                <Alpine />
+                <Alpine />
+                <Alpine />
+            </div>
+        </div>
+		<div>
+            <h2>Svelte</h2>
+            <div class="component-block">
+                <Svelte client:idle />
+                <Svelte client:idle />
+                <Svelte client:idle />
+            </div>
+        </div>
+	</main>
+</Layout>

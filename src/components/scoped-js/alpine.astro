@@ -1,0 +1,10 @@
+---
+---
+
+<div class="scoped-js-component" x-data="{ checked: false }">
+    Clicking the button below should only toggle the checkbox in this specific instance of the <code>&ltAlpine&gt</code> component.
+    <div class="scoped-js-component__interactive-area">
+        <button type="button" class="button" x-on:click="checked = !checked">Click Here</button>
+        <input type="checkbox" value="vanilla" x-bind:checked="checked" />
+    </div>
+</div>
